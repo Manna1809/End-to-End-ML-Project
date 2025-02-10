@@ -1,8 +1,9 @@
 import os
-from pathlib import path
+from pathlib import Path
 import logging
 
-logging.basicConfig(Level=logging.INFO,format='[%(asctime$)]: %(message)$:')
+# logging.basicConfig(Level=logging.INFO,format='[%(asctime$)]: %(message)$:')
+logging.basicConfig(level=logging.INFO, format='[%(asctime)s]: %(message)s:')
 
 project_name = "mlProject"
 
@@ -34,7 +35,7 @@ list_of_files = [
 
 
 for filepath in list_of_files:
-    filepath = path (filepath)
+    filepath = Path (filepath)
     filedir, filename = os.path.split(filepath)
 
 
@@ -49,4 +50,3 @@ for filepath in list_of_files:
     
     else:
         logging.info(f"{filename} is already exists")
-        
